@@ -5,17 +5,11 @@ interface AppState {
 }
 
 export class App extends Component<{}, AppState> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      pressedKey: null,
-    };
-  }
+  state: AppState = {
+    pressedKey: null,
+  };
 
   handleKeyUp = (event: KeyboardEvent) => {
-    console.log(event.key);
-
     this.setState({ pressedKey: event.key });
   };
 
